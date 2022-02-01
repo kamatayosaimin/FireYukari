@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    private PlayerState _state;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _renderer;
     [SerializeField] private AtsumaruManager _atsumaruManager;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _state = PlayerState.Start;
         _atsumaruPad = _atsumaruManager.Pad;
     }
 
