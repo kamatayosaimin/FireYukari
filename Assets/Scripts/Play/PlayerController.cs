@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _renderer;
+    [SerializeField] private AtsumaruManager _atsumaruManager;
+    private AtsumaruPad _atsumaruPad;
 
     void Awake()
     {
@@ -17,19 +19,20 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _atsumaruPad = _atsumaruManager.Pad;
     }
 
     // Update is called once per frame
     void Update()
     {
+        _atsumaruPad.Update();
+
         Move();
     }
 
     void Move()
     {
         float horizontal = GetHorizontal();
-
-        //Debug.Log("Horizontal : " + horizontal);
 
         if (_renderer.flipX)
         {
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     float GetHorizontal()
     {
-        float horizontal = Input.GetAxisRaw("Move");
+        float horizontal = Input.GetAxisRaw("Move") + _atsumaruPad.GetHorizontal();
 
         if (horizontal < 0f)
             return -1f;
@@ -57,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 GetForce(float x)
     {
-        x *= _speed;
+        x *= _speed * Time.deltaTime;
 
         return new Vector2(x, 0f);
     }

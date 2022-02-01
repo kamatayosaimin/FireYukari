@@ -1,0 +1,7 @@
+以下のように書き換える
+
+<canvas id="unity-canvas" width=800 height=600 style="width: 800px; height: 600px; background: #231F20"></canvas>
+
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+<canvas id="unity-canvas" width=800 height=600 style="width: 100%; height: calc(100vw * 0.75); background: #231F20"></canvas>
