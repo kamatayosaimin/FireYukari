@@ -25,7 +25,9 @@ public abstract class FallObject : MonoBehaviour
         if (!playerController)
             return;
 
-        Instantiate(_hitSound, transform.position, Quaternion.identity);
+        if (_hitSound)
+            Instantiate(_hitSound, transform.position, Quaternion.identity);
+
         Hit(playerController);
         Destroy(gameObject);
     }
