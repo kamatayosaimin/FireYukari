@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _renderer;
     [SerializeField] private AtsumaruManager _atsumaruManager;
     private AtsumaruPad _atsumaruPad;
+    [SerializeField] private PlayScene _main;
 
     void Awake()
     {
@@ -27,9 +28,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _atsumaruPad.Update();
+        switch (_state)
+        {
+            case PlayerState.Start:
+                break;
+            case PlayerState.Playing:
+                _atsumaruPad.Update();
 
-        Move();
+                Move();
+
+                break;
+            case PlayerState.DeadJump:
+                break;
+            case PlayerState.DeadFall:
+                break;
+        }
+    }
+
+    public void GameStart()
+    {
+        _state = PlayerState.Playing;
     }
 
     void Move()
