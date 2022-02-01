@@ -9,6 +9,8 @@ public class PlayScene : SceneBehaviour
     protected override void Start()
     {
         base.Start();
+
+        AtsumaruManager.Comment.SetContext("Play");
     }
 
     // Update is called once per frame

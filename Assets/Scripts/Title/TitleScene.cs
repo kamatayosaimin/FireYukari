@@ -9,6 +9,8 @@ public class TitleScene : SceneBehaviour
     protected override void Start()
     {
         base.Start();
+
+        AtsumaruManager.Comment.SetContext("Title");
     }
 
     // Update is called once per frame
