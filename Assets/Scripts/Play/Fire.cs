@@ -17,5 +17,6 @@ public class Fire : FallObject
 
     protected override void Hit(PlayerController playerController)
     {
+        playerController.Damage();
     }
 }

@@ -36,11 +36,23 @@ public class PlayScene : SceneBehaviour
     [SerializeField] private int _maxScore = 99999990;
     private int _score;
     private PlayState _state;
+    [SerializeField] private Animator _musicAnimator;
+    private Animator _uiAnimator;
     [SerializeField] private AudioSource[] _sounds;
+    [SerializeField] private RectTransform _menuButtonParent;
+    private ButtonManager _buttonManager;
     [SerializeField] private Generator _generator;
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private HpUI _hpUI;
     [SerializeField] private ScoreText _scoreText;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        _uiAnimator = GetComponent<Animator>();
+        _buttonManager = GetComponent<ButtonManager>();
+    }
 
     // Start is called before the first frame update
     protected override void Start()
@@ -101,5 +113,35 @@ public class PlayScene : SceneBehaviour
         _score = Mathf.Min(_score, _maxScore);
 
         _scoreText.SetText(_score);
+    }
+
+    public void SetHp(int hp)
+    {
+        _hpUI.SetUI(hp);
+    }
+
+    public void PlayerDead()
+    {
+        _state = PlayState.Dead;
+
+        _generator.enabled = false;
+    }
+
+    public void GameOver()
+    {
+        string gameOver = "GameOver";
+
+        _musicAnimator.SetTrigger(gameOver);
+
+        _uiAnimator.SetTrigger(gameOver);
+
+        PlaySound(2);
+
+        AtsumaruManager.Comment.SetContext(gameOver);
+    }
+
+    public void EnableMenu()
+    {
+        _buttonManager.SetParent(_menuButtonParent);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadController : MonoBehaviour
 {
@@ -18,11 +19,16 @@ public class LoadController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        AsyncOperation load = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation load = SceneManager.LoadSceneAsync(sceneName);
 
         gameObject.SetActive(true);
 
         StartCoroutine(LoadState(load));
+    }
+
+    public void Reload()
+    {
+        LoadScene(SceneManager.GetActiveScene().name);
     }
 
     IEnumerator LoadState(AsyncOperation load)
