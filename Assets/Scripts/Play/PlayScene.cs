@@ -35,7 +35,6 @@ public class PlayScene : SceneBehaviour
 
     [SerializeField] private int _maxScore = 99999990;
     private int _score;
-    private PlayState _state;
     [SerializeField] private Animator _musicAnimator;
     private Animator _uiAnimator;
     [SerializeField] private AudioSource[] _sounds;
@@ -60,7 +59,6 @@ public class PlayScene : SceneBehaviour
         base.Start();
 
         _score = 0;
-        _state = PlayState.Start;
 
         _scoreText.SetText(_score);
 
@@ -71,26 +69,10 @@ public class PlayScene : SceneBehaviour
     protected override void Update()
     {
         base.Update();
-
-        switch (_state)
-        {
-            case PlayState.Start:
-                break;
-            case PlayState.Playing:
-                break;
-            case PlayState.Dead:
-                break;
-            case PlayState.GameOver:
-                break;
-            case PlayState.Menu:
-                break;
-        }
     }
 
     public void GameStart()
     {
-        _state = PlayState.Playing;
-
         _generator.enabled = true;
 
         _playerController.GameStart();
@@ -122,8 +104,6 @@ public class PlayScene : SceneBehaviour
 
     public void PlayerDead()
     {
-        _state = PlayState.Dead;
-
         _generator.enabled = false;
     }
 
