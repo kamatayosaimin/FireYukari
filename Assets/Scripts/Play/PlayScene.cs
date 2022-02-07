@@ -6,6 +6,7 @@ public class PlayScene : SceneBehaviour
 {
     private PlayState _state;
     [SerializeField] private AudioSource[] _sounds;
+    [SerializeField] private Generator _generator;
     [SerializeField] private PlayerController _playerController;
 
     // Start is called before the first frame update
@@ -41,6 +42,8 @@ public class PlayScene : SceneBehaviour
     public void GameStart()
     {
         _state = PlayState.Playing;
+
+        _generator.enabled = true;
 
         _playerController.GameStart();
     }
