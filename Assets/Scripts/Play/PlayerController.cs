@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour
         _state = PlayerState.Playing;
     }
 
+    public void AddScore(int add)
+    {
+        _main.AddScore(add);
+    }
+
     void Move()
     {
         float horizontal = GetHorizontal();

@@ -18,5 +18,6 @@ public class ScoreObject : FallObject
 
     protected override void Hit(PlayerController playerController)
     {
+        playerController.AddScore(_score);
     }
 }
