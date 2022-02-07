@@ -2838,12 +2838,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _commentReset: 0
+  _maxScore: 99999990
   _sounds:
   - {fileID: 1690927376}
   - {fileID: 2128235502}
   - {fileID: 1782769538}
   _generator: {fileID: 767700038}
   _playerController: {fileID: 2045258983}
+  _hpUI:
+    _slider: {fileID: 1501655719}
+    _text: {fileID: 1082561354}
+  _scoreText:
+    _style: SC {0:D8}
+    _text: {fileID: 1710872873}
 --- !u!114 &2114020784
 MonoBehaviour:
   m_ObjectHideFlags: 0
