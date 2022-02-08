@@ -22,7 +22,7 @@ public abstract class FallObject : MonoBehaviour
     {
         PlayerController playerController = collision.GetComponent<PlayerController>();
 
-        if (!playerController)
+        if (!playerController || playerController.State > PlayerState.Playing)
             return;
 
         if (_hitSound)

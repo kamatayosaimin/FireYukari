@@ -17,6 +17,14 @@ public class PlayerController : MonoBehaviour
     private AtsumaruPad _atsumaruPad;
     [SerializeField] private PlayScene _main;
 
+    public PlayerState State
+    {
+        get
+        {
+            return _state;
+        }
+    }
+
     void Awake()
     {
         _animator = GetComponent<Animator>();
