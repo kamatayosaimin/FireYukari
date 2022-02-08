@@ -39,6 +39,7 @@ public class PlayScene : SceneBehaviour
     private Animator _uiAnimator;
     [SerializeField] private AudioSource[] _sounds;
     [SerializeField] private RectTransform _menuButtonParent;
+    private AtsumaruScoreBoard _atsumaruScoreBoard;
     private ButtonManager _buttonManager;
     [SerializeField] private Generator _generator;
     [SerializeField] private PlayerController _playerController;
@@ -59,6 +60,7 @@ public class PlayScene : SceneBehaviour
         base.Start();
 
         _score = 0;
+        _atsumaruScoreBoard = AtsumaruManager.ScoreBoard;
 
         _scoreText.SetText(_score);
 
@@ -123,5 +125,7 @@ public class PlayScene : SceneBehaviour
     public void EnableMenu()
     {
         _buttonManager.SetParent(_menuButtonParent);
+
+        _atsumaruScoreBoard.ShowScoreBoard(_score);
     }
 }

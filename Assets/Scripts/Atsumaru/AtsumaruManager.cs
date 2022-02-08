@@ -7,6 +7,7 @@ public class AtsumaruManager : MonoBehaviour
 {
     private AtsumaruComment _comment;
     private AtsumaruPad _pad;
+    private AtsumaruScoreBoard _scoreBoard;
 
     public AtsumaruComment Comment
     {
@@ -24,16 +25,27 @@ public class AtsumaruManager : MonoBehaviour
         }
     }
 
+    public AtsumaruScoreBoard ScoreBoard
+    {
+        get
+        {
+            return _scoreBoard;
+        }
+    }
+
     void Awake()
     {
         _comment = new AtsumaruComment();
         _pad = new AtsumaruPad();
+        _scoreBoard = new AtsumaruScoreBoard();
 
         if (RpgAtsumaruApi.Initialized)
         {
             _pad.Initialize();
 
             _comment.Initialize();
+
+            _scoreBoard.Initiaize();
 
             return;
         }
@@ -43,6 +55,8 @@ public class AtsumaruManager : MonoBehaviour
         _pad.StartControllerListen();
 
         _comment.Initialize();
+
+        _scoreBoard.Initiaize();
     }
 
     // Start is called before the first frame update
