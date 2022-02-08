@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField] private RectTransform _currentParent;
+    [SerializeField] private InstantSound _clickedSound;
     private PadButton[] _buttons;
 
     void Awake()
@@ -23,6 +24,13 @@ public class ButtonManager : MonoBehaviour
         foreach (var b in _buttons)
             if (b.GetButtonDown())
                 break;
+    }
+
+    public void PlayClickedSound()
+    {
+        GameObject obj = Instantiate(_clickedSound, Camera.main.transform.position, Quaternion.identity).gameObject;
+
+        DontDestroyOnLoad(obj);
     }
 
     public void RemoveParent()
