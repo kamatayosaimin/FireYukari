@@ -13,6 +13,9 @@
 きろのの 様  
 [https://ola.kironono.com/entry/fonts-kiloji]([URL](https://ola.kironono.com/entry/fonts-kiloji))
 
+## ライセンス
+ライセンスは「CC BY-NC 4.0」です。
+
 ## 制作
 要塞民  
 Twitter : [https://twitter.com/kamatayosaimin]([URL](https://twitter.com/kamatayosaimin))
