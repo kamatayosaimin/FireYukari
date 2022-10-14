@@ -16,6 +16,10 @@
 ## ライセンス
 ライセンスは「CC BY-NC 4.0」です。
 
+## リンク
+ニコニコゲームアツマールにてプレイ可能です。
+[https://game.nicovideo.jp/atsumaru/games/gm23658]([URL](https://game.nicovideo.jp/atsumaru/games/gm23658))
+
 ## 制作
 要塞民  
 Twitter : [https://twitter.com/kamatayosaimin]([URL](https://twitter.com/kamatayosaimin))
