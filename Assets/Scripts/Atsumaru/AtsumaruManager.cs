@@ -1,4 +1,4 @@
-using RpgAtsumaruApiForUnity;
+//using RpgAtsumaruApiForUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,24 +39,24 @@ public class AtsumaruManager : MonoBehaviour
         _pad = new AtsumaruPad();
         _scoreBoard = new AtsumaruScoreBoard();
 
-        if (RpgAtsumaruApi.Initialized)
-        {
-            _pad.Initialize();
+        //if (RpgAtsumaruApi.Initialized)
+        //{
+        //    _pad.Initialize();
 
-            _comment.Initialize();
+        //    _comment.Initialize();
 
-            _scoreBoard.Initiaize();
+        //    _scoreBoard.Initiaize();
 
-            return;
-        }
+        //    return;
+        //}
 
-        RpgAtsumaruApi.Initialize();
+        //RpgAtsumaruApi.Initialize();
 
-        _pad.StartControllerListen();
+        //_pad.StartControllerListen();
 
-        _comment.Initialize();
+        //_comment.Initialize();
 
-        _scoreBoard.Initiaize();
+        //_scoreBoard.Initiaize();
     }
 
     // Start is called before the first frame update
