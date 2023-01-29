@@ -17,8 +17,10 @@
 ライセンスは「CC BY-NC 4.0」です。
 
 ## リンク
-ニコニコゲームアツマールにてプレイ可能です。  
-[https://game.nicovideo.jp/atsumaru/games/gm23658]([URL](https://game.nicovideo.jp/atsumaru/games/gm23658))
+ニコニコゲームアツマールにてプレイ可能です。 ※2023年6月28日サービス終了予定  
+[https://game.nicovideo.jp/atsumaru/games/gm23658]([URL](https://game.nicovideo.jp/atsumaru/games/gm23658))  
+PLiCyにてプレイ可能です。  
+[https://plicy.net/GamePlay/148101]([URL](https://plicy.net/GamePlay/148101))
 
 ## 制作
 要塞民  
